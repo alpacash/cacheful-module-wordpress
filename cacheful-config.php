@@ -16,6 +16,10 @@ function getCachefulApiToken() {
         : null;
 }
 
+function shouldSimulateSlow() {
+    return defined('CACHEFUL_SIMULATE_SLOW');
+}
+
 function isConfigured()
 {
     return isCachefulEnabled()

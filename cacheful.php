@@ -59,7 +59,9 @@ function cache_page()
 
     ob_start();
 
-    cacheful_simulate_slow();
+    if (shouldSimulateSlow()) {
+        cacheful_simulate_slow();
+    }
 }
 
 function cacheful_close()
@@ -115,7 +117,6 @@ function cacheful_warmup()
                 ['headers' => ['Authorization' => 'Bearer ' . getCachefulApiToken()]]
             )->getStatusCode();
         header("Location: /wp-admin/options-general.php?page=cachefulclient&warmup-status-code={$warmupStatuscode}"); exit;
-        exit;
     } catch (\GuzzleHttp\Exception\GuzzleException $e) {
         header("Location: /wp-admin/options-general.php?page=cachefulclient&warmup-status-code=409"); exit;
     }
