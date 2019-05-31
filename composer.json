@@ -1,0 +1,18 @@
+{
+  "name": "cacheful/wordpress-module",
+  "description": "Wordpress module for cacheful.app",
+  "type": "wordpress-plugin",
+  "version": "0.1.0",
+  "license": "proprietary",
+  "require": {
+    "ext-json": "*",
+    "guzzlehttp/psr7": "^1.5",
+    "ext-curl": "*",
+    "guzzlehttp/guzzle": "^6.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Cacheful\\Client\\": ""
+    }
+  }
+}
