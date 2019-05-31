@@ -18,7 +18,7 @@ function prepare_index_file()
 function has_wordpress_cookie()
 {
     foreach ($_COOKIE as $key => $value) {
-        if (fnmatch('wordpress_*', $key)) {
+        if (fnmatch('wp-settings-*', $key)) {
             return true;
         }
     }
